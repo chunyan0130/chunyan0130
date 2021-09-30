@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>我是风起怨江南的测试报告标题</h1>
-<p class='attribute'><strong>Start Time:</strong> 2021-09-30 15:59:19</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.001495</p>
-<p class='attribute'><strong>Status:</strong> Pass 3</p>
+<p class='attribute'><strong>Start Time:</strong> 2021-09-30 16:41:00</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.003856</p>
+<p class='attribute'><strong>Status:</strong> Pass 2 Failure 1</p>
 
 <p class='description'>我是风起怨江南的测试报告描述</p>
 </div>
@@ -221,35 +221,82 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
-    <td>test_register.TestRegister: 注册接口测试用例类</td>
+<tr class='failClass'>
+    <td>test_register.TestRegister</td>
     <td>3</td>
-    <td>3</td>
-    <td>0</td>
+    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_pwd1_not_pwd2: 注册失败-两次密码不一致</div></td>
+    <td class='none'><div class='testcase'>test_pwd1_not_pwd2</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_register_success: 注册成功</div></td>
-    <td colspan='5' align='center'>pass</td>
+    <td class='none'><div class='testcase'>test_register_success</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 33333333333
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_username_isnull: 注册失败-用户名为空</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_username_isnull</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        fail</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Traceback (most recent call last):
+  File "/Users/didi/testbranch/chunyan0130/test_register.py", line 22, in test_username_isnull
+    self.assertEqual(expected, result)
+AssertionError: {'code': 0, 'msg': '所有参数不能为空333'} != {'code': 0, 'msg': '所有参数不能为空'}
+- {'code': 0, 'msg': '所有参数不能为空333'}
+?                             ---
+
++ {'code': 0, 'msg': '所有参数不能为空'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>3</td>
-    <td>3</td>
-    <td>0</td>
+    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>
